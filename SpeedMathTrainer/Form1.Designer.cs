@@ -49,7 +49,7 @@ namespace SpeedMathTrainer
             this.startButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.userScore = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.numberBox2 = new System.Windows.Forms.TextBox();
             this.numberBox1 = new System.Windows.Forms.TextBox();
             this.operatorLabel1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace SpeedMathTrainer
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.incrementAnim2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.stringPanel = new System.Windows.Forms.Panel();
             this.numBox3 = new System.Windows.Forms.TextBox();
             this.numBox7 = new System.Windows.Forms.TextBox();
             this.numBox6 = new System.Windows.Forms.TextBox();
@@ -85,9 +85,9 @@ namespace SpeedMathTrainer
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.stringPanel.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,7 +158,7 @@ namespace SpeedMathTrainer
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.BackColor = System.Drawing.Color.Aqua;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.userMin1);
             this.panel1.Controls.Add(this.userMin2);
@@ -254,7 +254,7 @@ namespace SpeedMathTrainer
             // 
             // operatorChooser
             // 
-            this.operatorChooser.BackColor = System.Drawing.Color.Azure;
+            this.operatorChooser.BackColor = System.Drawing.Color.Aqua;
             this.operatorChooser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.operatorChooser.CheckOnClick = true;
             this.operatorChooser.ColumnWidth = 2;
@@ -274,7 +274,7 @@ namespace SpeedMathTrainer
             // 
             // startButton
             // 
-            this.startButton.BackColor = System.Drawing.Color.White;
+            this.startButton.BackColor = System.Drawing.Color.SeaShell;
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.Location = new System.Drawing.Point(121, 385);
             this.startButton.Name = "startButton";
@@ -287,7 +287,7 @@ namespace SpeedMathTrainer
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.userScore);
-            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Controls.Add(this.mainPanel);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.timeLeftLabel);
             this.tabPage2.Controls.Add(this.answerBox);
@@ -310,16 +310,16 @@ namespace SpeedMathTrainer
             this.userScore.TabIndex = 4;
             this.userScore.Text = "Score: 0";
             // 
-            // panel3
+            // mainPanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.Honeydew;
-            this.panel3.Controls.Add(this.numberBox2);
-            this.panel3.Controls.Add(this.numberBox1);
-            this.panel3.Controls.Add(this.operatorLabel1);
-            this.panel3.Location = new System.Drawing.Point(-4, 247);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1221, 147);
-            this.panel3.TabIndex = 22;
+            this.mainPanel.BackColor = System.Drawing.Color.Honeydew;
+            this.mainPanel.Controls.Add(this.numberBox2);
+            this.mainPanel.Controls.Add(this.numberBox1);
+            this.mainPanel.Controls.Add(this.operatorLabel1);
+            this.mainPanel.Location = new System.Drawing.Point(-4, 247);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1221, 147);
+            this.mainPanel.TabIndex = 22;
             // 
             // numberBox2
             // 
@@ -361,7 +361,7 @@ namespace SpeedMathTrainer
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(265, 491);
+            this.label10.Location = new System.Drawing.Point(162, 491);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(101, 108);
             this.label10.TabIndex = 20;
@@ -379,10 +379,11 @@ namespace SpeedMathTrainer
             // 
             // answerBox
             // 
+            this.answerBox.BackColor = System.Drawing.Color.White;
             this.answerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.answerBox.Location = new System.Drawing.Point(372, 483);
+            this.answerBox.Location = new System.Drawing.Point(269, 483);
             this.answerBox.Name = "answerBox";
-            this.answerBox.Size = new System.Drawing.Size(519, 116);
+            this.answerBox.Size = new System.Drawing.Size(646, 116);
             this.answerBox.TabIndex = 3;
             this.answerBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.answerBox.TextChanged += new System.EventHandler(this.answerBox_TextChanged);
@@ -392,7 +393,7 @@ namespace SpeedMathTrainer
             this.incrementAnim.AutoSize = true;
             this.incrementAnim.BackColor = System.Drawing.Color.Transparent;
             this.incrementAnim.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incrementAnim.ForeColor = System.Drawing.Color.Black;
+            this.incrementAnim.ForeColor = System.Drawing.Color.Lime;
             this.incrementAnim.Location = new System.Drawing.Point(1075, 68);
             this.incrementAnim.Name = "incrementAnim";
             this.incrementAnim.Size = new System.Drawing.Size(79, 55);
@@ -404,7 +405,7 @@ namespace SpeedMathTrainer
             // 
             this.tabPage3.Controls.Add(this.incrementAnim2);
             this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Controls.Add(this.stringPanel);
             this.tabPage3.Controls.Add(this.answerBoxString);
             this.tabPage3.Controls.Add(this.scoreCopy);
             this.tabPage3.Controls.Add(this.timeCopy);
@@ -420,6 +421,7 @@ namespace SpeedMathTrainer
             // 
             this.incrementAnim2.AutoSize = true;
             this.incrementAnim2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incrementAnim2.ForeColor = System.Drawing.Color.Lime;
             this.incrementAnim2.Location = new System.Drawing.Point(1075, 68);
             this.incrementAnim2.Name = "incrementAnim2";
             this.incrementAnim2.Size = new System.Drawing.Size(79, 55);
@@ -431,35 +433,35 @@ namespace SpeedMathTrainer
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(324, 451);
+            this.label9.Location = new System.Drawing.Point(330, 486);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 108);
             this.label9.TabIndex = 19;
             this.label9.Text = "=";
             // 
-            // panel2
+            // stringPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Honeydew;
-            this.panel2.Controls.Add(this.numBox3);
-            this.panel2.Controls.Add(this.numBox7);
-            this.panel2.Controls.Add(this.numBox6);
-            this.panel2.Controls.Add(this.numBox5);
-            this.panel2.Controls.Add(this.numBox4);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(-4, 243);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1227, 123);
-            this.panel2.TabIndex = 18;
+            this.stringPanel.BackColor = System.Drawing.Color.Honeydew;
+            this.stringPanel.Controls.Add(this.numBox3);
+            this.stringPanel.Controls.Add(this.numBox7);
+            this.stringPanel.Controls.Add(this.numBox6);
+            this.stringPanel.Controls.Add(this.numBox5);
+            this.stringPanel.Controls.Add(this.numBox4);
+            this.stringPanel.Controls.Add(this.label6);
+            this.stringPanel.Controls.Add(this.label7);
+            this.stringPanel.Controls.Add(this.label8);
+            this.stringPanel.Controls.Add(this.label5);
+            this.stringPanel.Location = new System.Drawing.Point(-4, 246);
+            this.stringPanel.Name = "stringPanel";
+            this.stringPanel.Size = new System.Drawing.Size(1227, 147);
+            this.stringPanel.TabIndex = 18;
             // 
             // numBox3
             // 
             this.numBox3.BackColor = System.Drawing.Color.White;
             this.numBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox3.Location = new System.Drawing.Point(72, 15);
+            this.numBox3.Location = new System.Drawing.Point(72, 27);
             this.numBox3.Name = "numBox3";
             this.numBox3.ReadOnly = true;
             this.numBox3.Size = new System.Drawing.Size(157, 90);
@@ -472,7 +474,7 @@ namespace SpeedMathTrainer
             this.numBox7.BackColor = System.Drawing.Color.White;
             this.numBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox7.Location = new System.Drawing.Point(963, 15);
+            this.numBox7.Location = new System.Drawing.Point(963, 27);
             this.numBox7.Name = "numBox7";
             this.numBox7.ReadOnly = true;
             this.numBox7.Size = new System.Drawing.Size(157, 90);
@@ -485,7 +487,7 @@ namespace SpeedMathTrainer
             this.numBox6.BackColor = System.Drawing.Color.White;
             this.numBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox6.Location = new System.Drawing.Point(739, 15);
+            this.numBox6.Location = new System.Drawing.Point(739, 27);
             this.numBox6.Name = "numBox6";
             this.numBox6.ReadOnly = true;
             this.numBox6.Size = new System.Drawing.Size(157, 90);
@@ -498,7 +500,7 @@ namespace SpeedMathTrainer
             this.numBox5.BackColor = System.Drawing.Color.White;
             this.numBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox5.Location = new System.Drawing.Point(514, 15);
+            this.numBox5.Location = new System.Drawing.Point(514, 27);
             this.numBox5.Name = "numBox5";
             this.numBox5.ReadOnly = true;
             this.numBox5.Size = new System.Drawing.Size(157, 90);
@@ -511,7 +513,7 @@ namespace SpeedMathTrainer
             this.numBox4.BackColor = System.Drawing.Color.White;
             this.numBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox4.Location = new System.Drawing.Point(292, 15);
+            this.numBox4.Location = new System.Drawing.Point(292, 27);
             this.numBox4.Name = "numBox4";
             this.numBox4.ReadOnly = true;
             this.numBox4.Size = new System.Drawing.Size(157, 90);
@@ -523,7 +525,7 @@ namespace SpeedMathTrainer
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(883, 8);
+            this.label6.Location = new System.Drawing.Point(883, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 108);
             this.label6.TabIndex = 11;
@@ -533,7 +535,7 @@ namespace SpeedMathTrainer
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(435, 8);
+            this.label7.Location = new System.Drawing.Point(435, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 108);
             this.label7.TabIndex = 13;
@@ -543,7 +545,7 @@ namespace SpeedMathTrainer
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(660, 8);
+            this.label8.Location = new System.Drawing.Point(660, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 108);
             this.label8.TabIndex = 15;
@@ -553,7 +555,7 @@ namespace SpeedMathTrainer
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(214, 8);
+            this.label5.Location = new System.Drawing.Point(214, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 108);
             this.label5.TabIndex = 9;
@@ -561,8 +563,9 @@ namespace SpeedMathTrainer
             // 
             // answerBoxString
             // 
+            this.answerBoxString.BackColor = System.Drawing.Color.White;
             this.answerBoxString.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.answerBoxString.Location = new System.Drawing.Point(431, 447);
+            this.answerBoxString.Location = new System.Drawing.Point(449, 483);
             this.answerBoxString.Name = "answerBoxString";
             this.answerBoxString.Size = new System.Drawing.Size(358, 116);
             this.answerBoxString.TabIndex = 17;
@@ -606,11 +609,11 @@ namespace SpeedMathTrainer
             // avgTimeBox
             // 
             this.avgTimeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avgTimeBox.Location = new System.Drawing.Point(8, 15);
+            this.avgTimeBox.Location = new System.Drawing.Point(37, 15);
             this.avgTimeBox.Multiline = true;
             this.avgTimeBox.Name = "avgTimeBox";
             this.avgTimeBox.ReadOnly = true;
-            this.avgTimeBox.Size = new System.Drawing.Size(1119, 143);
+            this.avgTimeBox.Size = new System.Drawing.Size(1103, 143);
             this.avgTimeBox.TabIndex = 3;
             this.avgTimeBox.Text = "summary goes here";
             this.avgTimeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -655,7 +658,7 @@ namespace SpeedMathTrainer
             // 
             // nextDelay
             // 
-            this.nextDelay.Interval = 200;
+            this.nextDelay.Interval = 300;
             this.nextDelay.Tick += new System.EventHandler(this.nextDelay_Tick);
             // 
             // opacityTimer
@@ -678,12 +681,12 @@ namespace SpeedMathTrainer
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.stringPanel.ResumeLayout(false);
+            this.stringPanel.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
@@ -730,11 +733,11 @@ namespace SpeedMathTrainer
         private System.Windows.Forms.Timer nextDelay;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel stringPanel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label incrementAnim2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label incrementAnim;
         private System.Windows.Forms.Timer opacityTimer;
         private System.Windows.Forms.TabPage tabPage4;

@@ -56,6 +56,7 @@ namespace SpeedMathTrainer
             //Debug.WriteLine(genRandomNum(randMin, randMax));
              tabControl1.Location = new Point(1, -22);
             Debug.WriteLine("form loaded");
+            this.DesktopLocation = new Point(575, 300);
 
 
         }
@@ -69,44 +70,25 @@ namespace SpeedMathTrainer
 
 
 
-
-
-
-
-        public void startButton_Click(object sender, EventArgs e)
+        public void initialize()
         {
-            
-
-            try
-            {
-                timeLeft = Convert.ToDouble(timeLimitInputBox.Text);
-                randMin1 = Convert.ToInt32(userMin1.Text);                                    //pass user random mins and maxes
-                randMin2 = Convert.ToInt32(userMin2.Text);
-                randMax1 = Convert.ToInt32(userMax1.Text);
-                randMax2 = Convert.ToInt32(userMax2.Text);
-                incrementAnim.Hide();
-                incrementAnim2.Hide();
-                Debug.WriteLine("started");
+            timeLeft = Convert.ToDouble(timeLimitInputBox.Text);
+            randMin1 = Convert.ToInt32(userMin1.Text);                                    //pass user random mins and maxes
+            randMin2 = Convert.ToInt32(userMin2.Text);
+            randMax1 = Convert.ToInt32(userMax1.Text);
+            randMax2 = Convert.ToInt32(userMax2.Text);
+            incrementAnim.Hide();
+            incrementAnim2.Hide();
+            Debug.WriteLine("started");
 
 
-                resetAll();
+            resetAll();
 
-                gameTimer.Enabled = true;
+            gameTimer.Enabled = true;
 
-                //general reset
-                tabControl1.SelectedTab = tabPage2;
-                answerBox.Focus();
-
-            }
-            catch (FormatException)
-            {
-
-                MessageBox.Show("thine sack count was not defined!");
-                autoPickerButton_Click(sender, e);
-                
-            }
-            
-
+            //general reset
+            tabControl1.SelectedTab = tabPage2;
+            answerBox.Focus();
 
             for (var i = 0; i < operatorChooser.Items.Count; i++)                       //gets the checked operators and appends them to canPob LIST
             {
@@ -157,6 +139,31 @@ namespace SpeedMathTrainer
 
             generateProblem();
             setProblem(problemNumber);
+
+        }
+
+
+
+        public void startButton_Click(object sender, EventArgs e)
+        {
+            
+
+            try
+            {
+                initialize();
+
+            }
+            catch (FormatException)
+            {
+
+                MessageBox.Show("thine sack count was not defined!");
+                autoPickerButton_Click(sender, e);
+                
+            }
+            
+
+
+          
 
 
         }
@@ -329,6 +336,7 @@ namespace SpeedMathTrainer
             {
                 timePerProb.Add(timeLeftDiff - timeLeft);
                 nextDelay.Start();
+                colorFlashOn();
             }
 
         }
@@ -410,6 +418,10 @@ namespace SpeedMathTrainer
             }
 
            
+            if(summaryBox.Text == "")
+            {
+                summaryBox.Text = "You solved all problems under the average time? Technically this shouldn't be POSSIB";
+            }
 
 
 
@@ -514,10 +526,60 @@ namespace SpeedMathTrainer
 
             animationLabel.Location = new Point(1075, 68);
 
+            colorFlashOff();
+
             nextDelay.Stop();
 
 
         }
+
+        
+       private void colorFlashOn()
+        {
+            answerBox.ForeColor = Color.Lime;
+            // mainPanel.ForeColor = Color.Lime;
+            // stringPanel.ForeColor = Color.Lime;
+
+           /* foreach (Control controls in mainPanel.Controls)
+            {
+                if(controls is TextBox)
+                controls.ForeColor = Color.Lime;
+            }
+
+            foreach (Control controls in stringPanel.Controls)
+            {
+                if (controls is TextBox)
+                    controls.ForeColor = Color.Lime;
+            }
+            */
+
+            answerBoxString.ForeColor = Color.Lime;
+        }
+
+        private void colorFlashOff()
+        {
+            answerBox.ForeColor = Color.Black;
+            
+            answerBoxString.ForeColor = Color.Black;
+
+         //   mainPanel.ForeColor = Color.Black;
+          //  stringPanel.ForeColor = Color.Black;
+
+           /* foreach (Control controls in mainPanel.Controls)
+            {
+                if (controls is TextBox)
+                    controls.ForeColor = Color.Black;
+            }
+
+            foreach (Control controls in stringPanel.Controls)
+            {
+                if (controls is TextBox)
+                    controls.ForeColor = Color.Black;
+            }
+           */
+        }
+
+
 
         private void opacityTimer_Tick(object sender, EventArgs e)
         {
